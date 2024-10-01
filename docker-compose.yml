@@ -31,19 +31,7 @@ services:
     networks:
       - logging-net
     depends_on:
-      - elasticsearch    
-  
-  web:
-    build: ./flask
-    ports:
-      - "80:5000"
-    depends_on: 
-      - fluent-bit
-    logging:
-      driver: "fluentd"
-      options:
-        fluentd-address: localhost:24224
-       
+      - elasticsearch      
 
 networks:
   logging-net:
